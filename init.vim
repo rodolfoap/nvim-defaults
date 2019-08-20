@@ -1,3 +1,5 @@
+" REMEMBER running :checkhealth to check plugins status
+
 set nocompatible
 
 " Vundle ----------------------------------------------[START]
@@ -31,8 +33,8 @@ set ls=2
 " than 50 lines of registers
 set viminfo='20,\"50
 
-" keep 100000 lines of command line history
-set history=10000
+" keep 1000 lines of command line history
+set history=100
 
 " show the cursor position all the time
 set ruler
@@ -98,27 +100,7 @@ map <C-l> :LanguageToolCheck<CR>
 " Easier anti-quote
 imap éé `
 
-" -- show the column 81
-" if (exists('+colorcolumn'))
-"     set colorcolumn=80
-"     highlight ColorColumn ctermbg=1
-" endif
-
-" --- type ° to search the word in all files in the current dir
-nmap ° :Ag <c-r>=expand("<cword>")<cr><cr>
-nnoremap <space>/ :Ag
-
-" -- js beautifer
-autocmd FileType javascript noremap <buffer> <c-f> :call JsBeautify()<cr>
-autocmd FileType html noremap <buffer> <c-f> :call JsBeautify()<cr>
-autocmd FileType css noremap <buffer> <c-f> :call JsBeautify()<cr>
-
-" set noswapfile
-
-" -- vim-pandoc folding
-"let g:pandoc#modules#disabled = ["folding"]
-
-map <F10> :w<CR><bar>:!~/bin/go %<CR>
+map <F10> :w<CR><bar>:!~/bin/.x %<CR>
 
 " https://coderwall.com/p/if9mda/automatically-set-paste-mode-in-vim-when-pasting-in-insert-mode
 let &t_SI .= "\<Esc>[?2004h"
