@@ -136,8 +136,8 @@ set foldlevel=20
 :highlight ExtraWhitespace ctermbg=red guibg=red
 :match ExtraWhitespace /\s\+$/
 
-"let g:languagetool_jar='/opt/languagetool/languagetool-commandline.jar'
-"let g:languagetool_lang='en'
-"
+let g:languagetool_jar='/opt/languagetool/languagetool-commandline.jar'
+let g:languagetool_lang='en'
+
 "" Deoplete https://github.com/Shougo/deoplete.nvim
-"let g:deoplete#enable_at_startup = 1
+let g:deoplete#enable_at_startup = 1
