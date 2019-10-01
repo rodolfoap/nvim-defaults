@@ -126,3 +126,6 @@ let g:languagetool_lang='en'
 
 "" Deoplete https://github.com/Shougo/deoplete.nvim
 let g:deoplete#enable_at_startup = 1
+
+" Disable VISUAL mode when using mouse
+set mouse=
