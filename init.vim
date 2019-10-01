@@ -116,7 +116,6 @@ set foldlevel=20
 set whichwrap+=<,>,[,]
 set wrap lbr
 
-
 " Try the following if your GUI uses a dark background.
 :highlight ExtraWhitespace ctermbg=red guibg=red
 :match ExtraWhitespace /\s\+$/
@@ -129,3 +128,7 @@ let g:deoplete#enable_at_startup = 1
 
 " Disable VISUAL mode when using mouse
 set mouse=
+
+" Jump to next wrapped line, does not work
+noremap j gj
+noremap k gk
