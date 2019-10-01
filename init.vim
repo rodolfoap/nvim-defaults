@@ -113,6 +113,9 @@ function! XTermPasteBegin()
 endfunction
 
 set foldlevel=20
+set whichwrap+=<,>,[,]
+set wrap lbr
+
 
 " Try the following if your GUI uses a dark background.
 :highlight ExtraWhitespace ctermbg=red guibg=red
