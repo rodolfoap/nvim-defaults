@@ -1,4 +1,5 @@
 " REMEMBER running :checkhealth to check plugins status
+" Great guide: https://jdhao.github.io/2018/12/24/centos_nvim_install_use_guide_en/
 
 set nocompatible
 
@@ -15,6 +16,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'vim-scripts/LanguageTool'
 Plugin 'shougo/deoplete.nvim'
 Plugin 'zchee/deoplete-jedi'
+Plugin 'sbdchd/neoformat'
 "Plugin 'zchee/deoplete-clang'
 "Plugin 'rzaluska/deoplete-rtags'
 "Plugin 'deoplete-plugins/deoplete-docker'
