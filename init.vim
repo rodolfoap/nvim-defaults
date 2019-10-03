@@ -51,10 +51,10 @@ set hlsearch
 set visualbell
 
 " move between splits
-noremap <C-h> <C-w>h
-noremap <C-j> <C-w>j
-noremap <C-k> <C-w>k
-noremap <C-l> <C-w>l
+"noremap <C-h> <C-w>h
+"noremap <C-j> <C-w>j
+"noremap <C-k> <C-w>k
+"noremap <C-l> <C-w>l
 
 " -- sudo save
 cmap w!! w !sudo tee >/dev/null %
@@ -91,10 +91,6 @@ if has("spell") " if vim support spell checking
     highlight SpellLocal term=underline cterm=underline
 endif
 
-" Use CTRL-N to open the NerdTree
-map <C-n> :NERDTreeToggle<CR>
-map <C-l> :LanguageToolCheck<CR>
-
 " ========
 " Personal
 " ========
@@ -102,7 +98,13 @@ map <C-l> :LanguageToolCheck<CR>
 " Easier anti-quote
 imap éé `
 
-"map <F2>  :w<CR><bar>:!source .x<CR><CR>
+" Use CTRL-N to open the NerdTree
+map <C-n> :NERDTreeToggle<CR>
+map <C-l> :LanguageToolCheck<CR>
+imap <silent> <Down> <C-o>gj
+imap <silent> <Up> <C-o>gk
+"nmap <silent> <Down> gj
+"nmap <silent> <Up> gk
 
  map	<F7> gT
 imap	<F7> <Esc>gT
@@ -112,6 +114,8 @@ imap	<F8> <Esc>gt
 imap 	<F9> <Esc>:wa<CR>
  map	<F10> :qa<CR>
 imap	<F10> <Esc>:qa<CR>
+
+"map <F2>  :w<CR><bar>:!source .x<CR><CR>
 
 " https://coderwall.com/p/if9mda/automatically-set-paste-mode-in-vim-when-pasting-in-insert-mode
 let &t_SI .= "\<Esc>[?2004h"
@@ -139,7 +143,3 @@ let g:deoplete#enable_at_startup = 1
 
 " Disable VISUAL mode when using mouse
 set mouse=
-
-" Jump to next wrapped line, does not work
-noremap j gj
-noremap k gk
