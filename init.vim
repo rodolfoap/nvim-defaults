@@ -102,7 +102,9 @@ map <C-l> :LanguageToolCheck<CR>
 " Easier anti-quote
 imap éé `
 
-map <F10> :w<CR><bar>:!source .x %<CR>
+map <F2>  :w<CR><bar>:!source .x<CR><CR>
+map <F9>  :wa<CR>
+map <F10> :qa<CR>
 
 " https://coderwall.com/p/if9mda/automatically-set-paste-mode-in-vim-when-pasting-in-insert-mode
 let &t_SI .= "\<Esc>[?2004h"
