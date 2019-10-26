@@ -105,6 +105,8 @@ imap <silent> <Down> <C-o>gj
 imap <silent> <Up> <C-o>gk
 "nmap <silent> <Down> gj
 "nmap <silent> <Up> gk
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
  map	<F7> gT
 imap	<F7> <Esc>gT
@@ -114,8 +116,6 @@ imap	<F8> <Esc>gt
 imap 	<F9> <Esc>:wa<CR>
  map	<F10> :qa<CR>
 imap	<F10> <Esc>:qa<CR>
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
 "map <F2>  :w<CR><bar>:!source .x<CR><CR>
 
@@ -145,3 +145,9 @@ let g:deoplete#enable_at_startup = 1
 
 " Disable VISUAL mode when using mouse
 set mouse=
+
+" Uncomment the following to have Vim jump to the last position when
+" reopening a file
+if has("autocmd")
+	au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+endif
