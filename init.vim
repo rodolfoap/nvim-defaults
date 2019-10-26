@@ -101,10 +101,10 @@ imap éé `
 " Use CTRL-N to open the NerdTree
 map <C-n> :NERDTreeToggle<CR>
 map <C-l> :LanguageToolCheck<CR>
-"imap <silent> <Down> <C-o>gj
-"imap <silent> <Up> <C-o>gk
-nmap <silent> <Down> gj
-nmap <silent> <Up> gk
+imap <silent> <Down> <C-o>gj
+imap <silent> <Up> <C-o>gk
+"nmap <silent> <Down> gj
+"nmap <silent> <Up> gk
 
  map	<F7> gT
 imap	<F7> <Esc>gT
@@ -114,6 +114,8 @@ imap	<F8> <Esc>gt
 imap 	<F9> <Esc>:wa<CR>
  map	<F10> :qa<CR>
 imap	<F10> <Esc>:qa<CR>
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
 "map <F2>  :w<CR><bar>:!source .x<CR><CR>
 
