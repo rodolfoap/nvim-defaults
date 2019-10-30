@@ -10,7 +10,7 @@ set nocompatible
 filetype off
 set rtp+=~/.config/nvim/bundle/Vundle.vim
 call vundle#begin()
-"
+
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'vim-scripts/LanguageTool'
@@ -20,7 +20,8 @@ Plugin 'sbdchd/neoformat'
 "Plugin 'zchee/deoplete-clang'
 "Plugin 'rzaluska/deoplete-rtags'
 "Plugin 'deoplete-plugins/deoplete-docker'
-"
+Plugin 'vim-voom/voom'
+
 call vundle#end()
 filetype plugin indent on
 " Vundle ------------------------------------------------[END]
@@ -101,6 +102,7 @@ imap éé `
 " Use CTRL-N to open the NerdTree
 map <C-n> :NERDTreeToggle<CR>
 map <C-l> :LanguageToolCheck<CR>
+map <C-t> :Voom latex<CR>
 
 " Wise vertical motion in insert mode
 imap <silent> <Down> <C-o>gj
@@ -120,8 +122,8 @@ imap	<F7> <Esc>gT
 imap	<F8> <Esc>gt
  map 	<F9>  :wa<CR>
 imap 	<F9> <Esc>:wa<CR>
- map	<F10> :qa<CR>
-imap	<F10> <Esc>:qa<CR>
+ map	<F10> :x<CR>
+imap	<F10> <Esc>:x<CR>
 
 "map <F2>  :w<CR><bar>:!source .x<CR><CR>
 
