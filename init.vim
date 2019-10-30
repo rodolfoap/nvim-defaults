@@ -23,6 +23,8 @@ Plugin 'vim-voom/voom'
 
 call vundle#end()
 filetype plugin indent on
+" Deoplete avoid opening additional window
+set completeopt-=preview
 " Vundle ------------------------------------------------[END]
 
 " allow backspacing over everything in insert mode
@@ -115,14 +117,14 @@ xmap <silent> <Up> gk
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
- map	<F7> gT
-imap	<F7> <Esc>gT
- map	<F8> gt
-imap	<F8> <Esc>gt
+ map	<F7>  gT
+imap	<F7>  <Esc>gT
+ map	<F8>  gt
+imap	<F8>  <Esc>gt
  map 	<F9>  :wa<CR>
-imap 	<F9> <Esc>:wa<CR>
- map	<F10> :x<CR>
-imap	<F10> <Esc>:x<CR>
+imap 	<F9>  <Esc>:wa<CR>
+ map	<F10> :xa<CR>
+imap	<F10> <Esc>:xa<CR>
 
 "map <F2>  :w<CR><bar>:!source .x<CR><CR>
 
