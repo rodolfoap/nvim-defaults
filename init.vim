@@ -101,10 +101,16 @@ imap éé `
 " Use CTRL-N to open the NerdTree
 map <C-n> :NERDTreeToggle<CR>
 map <C-l> :LanguageToolCheck<CR>
+
+" Wise vertical motion in insert mode
 imap <silent> <Down> <C-o>gj
 imap <silent> <Up> <C-o>gk
-"nmap <silent> <Down> gj
-"nmap <silent> <Up> gk
+
+" Wise vertical motion in visual mode
+xmap <silent> <Down> gj
+xmap <silent> <Up> gk
+
+" Deoplete works only with tabs
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
