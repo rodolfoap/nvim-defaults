@@ -17,9 +17,8 @@ Plugin 'vim-scripts/LanguageTool'
 Plugin 'shougo/deoplete.nvim'
 Plugin 'zchee/deoplete-jedi'
 Plugin 'sbdchd/neoformat'
-"Plugin 'zchee/deoplete-clang'
-"Plugin 'rzaluska/deoplete-rtags'
-"Plugin 'deoplete-plugins/deoplete-docker'
+Plugin 'zchee/deoplete-clang'
+Plugin 'rzaluska/deoplete-rtags'
 Plugin 'vim-voom/voom'
 
 call vundle#end()
