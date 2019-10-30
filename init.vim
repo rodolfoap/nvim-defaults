@@ -102,7 +102,7 @@ imap éé `
 " Use CTRL-N to open the NerdTree
 map <C-n> :NERDTreeToggle<CR>
 map <C-l> :LanguageToolCheck<CR>
-map <C-t> :Voom latex<CR>
+map <C-t> :Voom latex<CR>:vertical resize 40<CR>
 
 " Wise vertical motion in insert mode
 imap <silent> <Down> <C-o>gj
