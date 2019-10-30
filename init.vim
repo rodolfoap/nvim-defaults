@@ -105,6 +105,9 @@ map <C-n> :NERDTreeToggle<CR>
 map <C-l> :LanguageToolCheck<CR>
 map <C-t> :Voom latex<CR>:vertical resize 40<CR>
 
+" C++ formatting requires apt install astyle
+map <C-f> :%!astyle --style=java --indent=force-tab -O -o -xe -xC200<CR>
+
 " Wise vertical motion in insert mode
 imap <silent> <Down> <C-o>gj
 imap <silent> <Up> <C-o>gk
