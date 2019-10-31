@@ -103,7 +103,7 @@ imap éé `
 " Use CTRL-N to open the NerdTree
 map <C-n> :NERDTreeToggle<CR>
 map <C-l> :LanguageToolCheck<CR>
-map <C-t> :Voom latex<CR>:vertical resize 40<CR>
+map <C-t> :Voom latex<CR>:vertical resize 30<CR>
 
 " C++ formatting requires apt install astyle
 map <C-f> :%!astyle --style=java --indent=force-tab -O -o -xe -xC200<CR>
