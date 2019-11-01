@@ -108,8 +108,10 @@ map <C-t> :Voom latex<CR>:vertical resize 30<CR>
 " C++ formatting requires apt install astyle
 map <C-f> :%!astyle --style=java --indent=force-tab -O -o -xe -xC200<CR>
 
-" Visual mode fold to 100 with ^f
+" Visual mode fold to 100 with ^f (requires /usr/bin/fold)
 vmap <C-f> !fold -s -w 100<CR>
+" Visual mode tex-ize ^t (requires ~/bin/texize)
+vmap <C-t> !texize<CR>
 
 " Wise vertical motion in insert mode
 imap <silent> <Down> <C-o>gj
