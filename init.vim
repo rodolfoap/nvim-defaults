@@ -163,6 +163,9 @@ let g:deoplete#enable_at_startup = 1
 " Disable VISUAL mode when using mouse
 set mouse=
 
+" Cursor (:help guicursor)
+set guicursor=a:hor20-blinkwait0-blinkoff10-blinkon10
+
 " Uncomment the following to have Vim jump to the last position when
 " reopening a file
 if has("autocmd")
