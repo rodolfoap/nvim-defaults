@@ -125,10 +125,10 @@ xmap <silent> <Up> gk
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
- map	<F7>  gT
-imap	<F7>  <Esc>gT
- map	<F8>  gt
-imap	<F8>  <Esc>gt
+ map	<F7>  gT<C-w>W
+imap	<F7>  <Esc>gT<C-w>W
+ map	<F8>  gt<C-w><C-w>
+imap	<F8>  <Esc>gt<C-w><C-w>
  map 	<F9>  :wa<CR>
 imap 	<F9>  <Esc>:wa<CR>
  map	<F10> :xa<CR>
@@ -151,7 +151,7 @@ set whichwrap+=<,>,[,]
 set wrap lbr
 
 " Try the following if your GUI uses a dark background.
-:highlight ExtraWhitespace ctermbg=red guibg=red
+:highlight ExtraWhitespace ctermbg=darkred guibg=darkred
 :match ExtraWhitespace /\s\+$/
 
 let g:languagetool_jar='/opt/languagetool/languagetool-commandline.jar'
