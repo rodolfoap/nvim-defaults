@@ -1,0 +1,24 @@
+! Usage:
+!
+! vi .Xresources; xrdb -merge ~/.Xresources; xterm
+!
+Xft.dpi: 89
+Xft.antialias: false
+Xft.rgba: rgb
+Xft.hinting: true
+Xft.hintstyle: hintfull
+Xcursor.core: 1
+xterm*faceName: terminus
+xterm*faceSize: 10
+xterm*background: #000000
+xterm*foreground: #00FF00
+XTerm.vt100.translations:	#override \n\
+	Ctrl Shift <Key>C:	copy-selection(CLIPBOARD) \n\
+	Ctrl Shift <Key>V:	insert-selection(CLIPBOARD) \n\
+	Shift <Key>Up:		scroll-back(1) \n\
+	Shift <Key>Down:	scroll-forw(1) \n\
+	<Btn1Up>:		copy-selection(PRIMARY,CLIPBOARD,CUT_BUFFER0) \n\
+	<Btn2Up>:		insert-selection(PRIMARY,CLIPBOARD,CUT_BUFFER0)
+
+!<Btn2Down>: insert-selection(PRIMARY,CLIPBOARD)
+!<Btn1Down>: select-end(PRIMARY,CLIPBOARD,CUT_BUFFER0)

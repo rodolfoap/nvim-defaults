@@ -1,0 +1,9 @@
+
+#!/bin/bash
+set -x
+
+pushd ~
+rm -f .vim .Xresources
+ln -s .config/nvim/_vim .vim
+ln -s .config/nvim/_Xresources .Xresources
+popd
