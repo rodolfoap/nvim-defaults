@@ -20,6 +20,7 @@ Plugin 'sbdchd/neoformat'
 Plugin 'zchee/deoplete-clang'
 Plugin 'rzaluska/deoplete-rtags'
 Plugin 'vim-voom/voom'
+Plugin 'ludovicchabant/vim-gutentags'
 
 call vundle#end()
 filetype plugin indent on
