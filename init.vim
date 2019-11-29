@@ -135,6 +135,14 @@ imap 	<F9>  <Esc>:wa<CR>
  map	<F10> :xa<CR>
 imap	<F10> <Esc>:xa<CR>
 
+" To jump to the tag of the word under cursor, we use CTRL-J
+" This will also work: <C-R><C-W> puts the word under the cursor to the
+" command line:
+"map	<C-J> <Esc>:tag <C-R><C-W><CR><CR>
+ map	<C-M> <Esc>:tag <C-R>=expand('<cword>')<CR><CR>
+imap	<C-M> <Esc>:tag <C-R>=expand('<cword>')<CR><CR>
+" In addition, notice that C-M maps to CTRL-ENTER
+
 "map <F2>  :w<CR><bar>:!source .x<CR><CR>
 
 " https://coderwall.com/p/if9mda/automatically-set-paste-mode-in-vim-when-pasting-in-insert-mode
