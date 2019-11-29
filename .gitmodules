@@ -1,3 +1,33 @@
 [submodule "bundle/Vundle.vim"]
 	path = bundle/Vundle.vim
 	url = https://github.com/VundleVim/Vundle.vim.git
+[submodule "_vim/bundle/LanguageTool"]
+	path = _vim/bundle/LanguageTool
+	url = https://github.com/vim-scripts/LanguageTool.git
+[submodule "_vim/bundle/Vundle.vim"]
+	path = _vim/bundle/Vundle.vim
+	url = https://github.com/VundleVim/Vundle.vim.git
+[submodule "_vim/bundle/deoplete-clang"]
+	path = _vim/bundle/deoplete-clang
+	url = https://github.com/zchee/deoplete-clang.git
+[submodule "_vim/bundle/deoplete-jedi"]
+	path = _vim/bundle/deoplete-jedi
+	url = https://github.com/zchee/deoplete-jedi.git
+[submodule "_vim/bundle/deoplete-rtags"]
+	path = _vim/bundle/deoplete-rtags
+	url = https://github.com/rzaluska/deoplete-rtags.git
+[submodule "_vim/bundle/deoplete.nvim"]
+	path = _vim/bundle/deoplete.nvim
+	url = https://github.com/shougo/deoplete.nvim.git
+[submodule "_vim/bundle/neoformat"]
+	path = _vim/bundle/neoformat
+	url = https://github.com/sbdchd/neoformat.git
+[submodule "_vim/bundle/nerdtree"]
+	path = _vim/bundle/nerdtree
+	url = https://github.com/scrooloose/nerdtree.git
+[submodule "_vim/bundle/vim-gutentags"]
+	path = _vim/bundle/vim-gutentags
+	url = https://github.com/ludovicchabant/vim-gutentags.git
+[submodule "_vim/bundle/voom"]
+	path = _vim/bundle/voom
+	url = https://github.com/vim-voom/voom.git

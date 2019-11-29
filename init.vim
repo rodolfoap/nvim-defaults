@@ -140,8 +140,8 @@ imap	<F10> <Esc>:xa<CR>
 " This will also work: <C-R><C-W> puts the word under the cursor to the
 " command line:
 "map	<C-J> <Esc>:tag <C-R><C-W><CR><CR>
- map	<C-M> <Esc>:tag <C-R>=expand('<cword>')<CR><CR>
-imap	<C-M> <Esc>:tag <C-R>=expand('<cword>')<CR><CR>
+ map	<C-J> <Esc>:tag <C-R>=expand('<cword>')<CR><CR>
+imap	<C-J> <Esc>:tag <C-R>=expand('<cword>')<CR><CR>
 " In addition, notice that C-M maps to CTRL-ENTER
 
 "map <F2>  :w<CR><bar>:!source .x<CR><CR>
