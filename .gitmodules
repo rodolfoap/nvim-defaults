@@ -1,3 +1,7 @@
+#
+# To generate the .gitmodules entry, use:
+# p=_vim/bundle/[the plugin]; echo -e '[submodule "'$p'"]\n\tpath = '$p'\n\t'$(grep url $p/.git/config|head -1) >> .gitmodules
+#
 [submodule "bundle/Vundle.vim"]
 	path = bundle/Vundle.vim
 	url = https://github.com/VundleVim/Vundle.vim.git
