@@ -6,4 +6,5 @@ pushd ~
 rm -f .vim .Xresources
 ln -s .config/nvim/_vim .vim
 ln -s .config/nvim/_Xresources .Xresources
+mkdir -p .ctags
 popd

@@ -170,6 +170,9 @@ set guicursor=a:hor20-blinkwait0-blinkoff10-blinkon10
 " Disable Python formatting style, see expandtab in /usr/share/nvim/runtime/ftplugin/python.vim and https://github.com/vim/vim/issues/989
 let g:python_recommended_style = 0
 
+let g:gutentags_ctags_tagfile='ctags'
+let g:gutentags_cache_dir='/home/rodolfoap/.ctags/'
+
 " Uncomment the following to have Vim jump to the last position when
 " reopening a file
 if has("autocmd")
