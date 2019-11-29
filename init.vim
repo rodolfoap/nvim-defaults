@@ -107,7 +107,8 @@ map <C-l> :LanguageToolCheck<CR>
 map <C-t> :Voom latex<CR>:vertical resize 30<CR>
 
 " C++ formatting requires apt install astyle
-map <C-f> :%!astyle --style=java --indent=force-tab -O -o -xe -xC200<CR>
+autocmd BufEnter *.cpp 		map <C-f> :%!astyle --style=java --indent=force-tab -O -o -xe -xC200<CR>
+autocmd BufEnter *.py		map <C-f> :%!yapf<CR>
 
 " Visual mode fold to 100 with ^f (requires /usr/bin/fold)
 vmap <C-f> !fold -s -w 100<CR>
