@@ -53,6 +53,9 @@ set hlsearch
 " no beep
 set visualbell
 
+" numbering
+set number
+
 " move between splits
 "noremap <C-h> <C-w>h
 "noremap <C-j> <C-w>j
