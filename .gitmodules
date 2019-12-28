@@ -8,6 +8,7 @@
 [submodule "_vim/bundle/LanguageTool"]
 	path = _vim/bundle/LanguageTool
 	url = https://github.com/vim-scripts/LanguageTool.git
+	ignore = untracked
 [submodule "_vim/bundle/Vundle.vim"]
 	path = _vim/bundle/Vundle.vim
 	url = https://github.com/VundleVim/Vundle.vim.git
@@ -35,3 +36,4 @@
 [submodule "_vim/bundle/voom"]
 	path = _vim/bundle/voom
 	url = https://github.com/vim-voom/voom.git
+	ignore = untracked
