@@ -54,7 +54,7 @@ set hlsearch
 set visualbell
 
 " numbering
-set number
+set nonumber
 
 " move between splits
 "noremap <C-h> <C-w>h
