@@ -46,3 +46,7 @@
 	path = _vim/bundle/voom
 	url = https://github.com/vim-voom/voom.git
 	ignore = untracked
+[submodule "_vim/bundle/vim-gnupg"]
+	path = _vim/bundle/vim-gnupg
+	url = https://github.com/jamessan/vim-gnupg.git
+	ignore = untracked
