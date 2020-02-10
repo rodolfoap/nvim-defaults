@@ -118,6 +118,8 @@ autocmd BufEnter *.py		map <C-f> :%!yapf<CR>
 vmap <C-f> !fold -s -w 100<CR>
 " Visual mode tex-ize ^t (requires ~/bin/texize)
 vmap <C-t> !texize<CR>
+" Visual mode translate language ^l (requires google trans)
+vmap <C-l> !vim.translate.en2fr<CR>
 
 " Wise vertical motion in insert mode
 imap <silent> <Down> <C-o>gj
