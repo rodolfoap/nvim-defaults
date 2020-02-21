@@ -20,7 +20,7 @@ Plugin 'sbdchd/neoformat'
 Plugin 'zchee/deoplete-clang'
 Plugin 'rzaluska/deoplete-rtags'
 Plugin 'vim-voom/voom'
-Plugin 'ludovicchabant/vim-gutentags'
+"Plugin 'ludovicchabant/vim-gutentags'
 Plugin 'jamessan/vim-gnupg'
 
 call vundle#end()
