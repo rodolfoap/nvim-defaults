@@ -137,8 +137,8 @@ inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 imap	<F7>  <Esc>gT<C-w>W
  map	<F8>  gt<C-w><C-w>
 imap	<F8>  <Esc>gt<C-w><C-w>
- map 	<F9>  :wa<CR>
-imap 	<F9>  <Esc>:wa<CR>
+ map 	<F9>  :x<CR>
+imap 	<F9>  <Esc>:x<CR>
  map	<F10> :xa<CR>
 imap	<F10> <Esc>:xa<CR>
 
