@@ -2,6 +2,10 @@
 # To generate the .gitmodules entry, use:
 # p=_vim/bundle/[the plugin]; echo -e '[submodule "'$p'"]\n\tpath = '$p'\n\t'$(grep url $p/.git/config|head -1) >> .gitmodules
 #
+# Or just
+# for p in $(ls -1d _vim/bundle/*); do echo -e '[submodule "'$p'"]\n\tpath = '$p'\n\t'$(grep url $p/.git/config|head -1); done
+# (and then, just add the plugin).
+#
 [submodule "bundle/Vundle.vim"]
 	path = bundle/Vundle.vim
 	url = https://github.com/VundleVim/Vundle.vim.git
@@ -50,3 +54,8 @@
 	path = _vim/bundle/vim-gnupg
 	url = https://github.com/jamessan/vim-gnupg.git
 	ignore = untracked
+[submodule "_vim/bundle/deoplete-spell"]
+	path = _vim/bundle/deoplete-spell
+	url = https://github.com/deathlyfrantic/deoplete-spell.git
+	ignore = untracked
+
