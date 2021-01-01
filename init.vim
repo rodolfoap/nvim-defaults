@@ -9,21 +9,49 @@ set nocompatible
 "
 filetype off
 set rtp+=~/.config/nvim/bundle/Vundle.vim
+
+" Plugin Manager =======================================[START]
 call vundle#begin()
 
+" The very plugin manager
 Plugin 'VundleVim/Vundle.vim'
+
+" Left-column tree, activate with [CTRL-N]
 Plugin 'scrooloose/nerdtree'
+
+" Grammar check, activate with [CTRL-L]
 Plugin 'vim-scripts/LanguageTool'
+
+" Code formatting, apparently not used.
+" Plugin 'sbdchd/neoformat'
+
+" Autocomplete, nothing to do, enabled at startup
 Plugin 'shougo/deoplete.nvim'
+
+" Deoplete for Python
 Plugin 'zchee/deoplete-jedi'
-Plugin 'sbdchd/neoformat'
+
+" Deoplete for C++
 Plugin 'zchee/deoplete-clang'
+
+" Deoplete for C++ from database, requires running rtags (rdm)
 Plugin 'rzaluska/deoplete-rtags'
+
+" Nerdtree-like tree for latex tags, activate with [CTRL-T]
 Plugin 'vim-voom/voom'
+
+" Ctags generation, automatically loaded and executed at startup
 "Plugin 'ludovicchabant/vim-gutentags'
+
+" GNUPG files edition
 Plugin 'jamessan/vim-gnupg'
 
+" Autocomplete for spellcheck
+Plugin 'deathlyfrantic/deoplete-spell'
+
 call vundle#end()
+" Plugin Manager ========================================[END]
+
 filetype plugin indent on
 " Deoplete avoid opening additional window
 set completeopt-=preview
