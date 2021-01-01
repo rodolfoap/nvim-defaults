@@ -180,7 +180,6 @@ imap	<F5>  <Esc>:wa!<CR>
 imap	<C-J> <Esc>:tag <C-R>=expand('<cword>')<CR><CR>
 " In addition, notice that C-M maps to CTRL-ENTER
 
-
 " https://coderwall.com/p/if9mda/automatically-set-paste-mode-in-vim-when-pasting-in-insert-mode
 let &t_SI .= "\<Esc>[?2004h"
 let &t_EI .= "\<Esc>[?2004l"
