@@ -32,7 +32,8 @@ Plugin 'shougo/deoplete.nvim'
 Plugin 'zchee/deoplete-jedi'
 
 " Deoplete for C++
-Plugin 'zchee/deoplete-clang'
+"lugin 'zchee/deoplete-clang'
+Plugin 'sbdchd/neoformat'
 
 " Deoplete for C++ from database, requires running rtags (rdm)
 Plugin 'rzaluska/deoplete-rtags'
@@ -139,7 +140,8 @@ map <C-l> :LanguageToolCheck<CR>
 map <C-t> :Voom latex<CR>:vertical resize 30<CR>
 
 " C++ formatting requires apt install astyle
-autocmd BufEnter *.cpp 		map <C-f> :%!astyle --style=java --indent=force-tab -O -o -xe -xC200<CR>
+" autocmd BufEnter *.cpp 		map <C-f> :%!ls astyle --style=java --indent=force-tab -O -o -xe -xC200<CR>
+autocmd BufEnter *.cpp 		map <C-f> :%!/home/rodolfoap/bin/rlang-format<CR>
 autocmd BufEnter *.py		map <C-f> :%!yapf<CR>
 
 " Visual mode fold to 100 with ^f (requires /usr/bin/fold)
