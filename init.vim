@@ -149,8 +149,8 @@ vmap <C-f> !fold -s -w 100<CR>
 " Visual mode tex-ize ^t (requires ~/bin/texize)
 vmap <C-t> !texize<CR>
 " Visual mode translate language ^l (requires google trans)
-"vmap <C-l> !vim.translate.en2fr<CR>
-vmap <C-l> !vim.translate.fr2en<CR>
+vmap <C-l> !vim.translate.en2fr<CR>
+"vmap <C-l> !vim.translate.fr2en<CR>
 
 " Wise vertical motion in insert mode
 imap <silent> <Down> <C-o>gj

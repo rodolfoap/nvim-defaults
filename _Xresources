@@ -3,7 +3,7 @@
 ! vi .Xresources; xrdb -merge ~/.Xresources; xterm
 !
 Xft.dpi: 89
-Xft.antialias: false
+Xft.antialias: true
 Xft.rgba: rgb
 Xft.hinting: true
 Xft.hintstyle: hintfull
