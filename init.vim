@@ -130,27 +130,42 @@ endif
 " ========
 " Personal
 " ========
+" nmap - normal mode (ESC) maps
+" cmap - command-line (:) mode maps
+" imap - insert mode (i) maps
+" xmap - visual (v) mode maps
+" vmap - visual (v) and select mode (UNKNOWN) maps
+" smap - select mode (UNKNOWN) maps
+" omap - operator pending mode maps: dw='delete word', after pressing d, vim enters in op-pending-mode
+"  map - normal, visual and op-pending-mode map
 
 " Easier anti-quote
 imap éé `
 
 " Use CTRL-N to open the NerdTree
 map <C-n> :NERDTreeToggle<CR>
+" Syntax/Semantics checking
 map <C-l> :LanguageToolCheck<CR>
-map <C-t> :Voom latex<CR>:vertical resize 30<CR>
+" Opens latex tree with Vim Outliner
+map <C-a> :Voom latex<CR>:vertical resize 30<CR>
 
 " C++ formatting requires apt install astyle
 " autocmd BufEnter *.cpp 		map <C-f> :%!ls astyle --style=java --indent=force-tab -O -o -xe -xC200<CR>
 autocmd BufEnter *.cpp 		map <C-f> :%!/home/rodolfoap/bin/rlang-format<CR>
 autocmd BufEnter *.py		map <C-f> :%!yapf<CR>
 
+" CONTROL-t: Selects all visual block, tex-izes it (requires ~/bin/texize);
+" V selects all visual block, !command<CR> runs an external command
+nmap <C-t> V!texize<CR>
+
+" CONTROL-t: Selects all visual block, translates it (requires google trans);
+" V selects all visual block, !command<CR> runs an external command
+" vmap <C-l> !vim.translate.fr2en<CR>
+nmap <C-l> V!vim.translate.en2fr<CR>
+
+" CONTROL-f: Folds block to 100 chars
 " Visual mode fold to 100 with ^f (requires /usr/bin/fold)
 vmap <C-f> !fold -s -w 100<CR>
-" Visual mode tex-ize ^t (requires ~/bin/texize)
-vmap <C-t> !texize<CR>
-" Visual mode translate language ^l (requires google trans)
-vmap <C-l> !vim.translate.en2fr<CR>
-"vmap <C-l> !vim.translate.fr2en<CR>
 
 " Wise vertical motion in insert mode
 imap <silent> <Down> <C-o>gj
