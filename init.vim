@@ -157,6 +157,8 @@ autocmd BufEnter *.py		map <C-f> :%!yapf<CR>
 " CONTROL-t: Selects all visual block, tex-izes it (requires ~/bin/texize);
 " V selects all visual block, !command<CR> runs an external command
 nmap <C-t> V!texize<CR>
+" Or, if the text is already selected, and the user is already in visual mode:
+vmap <C-t> !texize<CR>
 
 " CONTROL-t: Selects all visual block, translates it (requires google trans);
 " V selects all visual block, !command<CR> runs an external command
