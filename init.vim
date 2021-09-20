@@ -143,11 +143,11 @@ endif
 imap éé `
 
 " Use CTRL-N to open the NerdTree
-map <C-n> :NERDTreeToggle<CR>
+map <C-a> :NERDTreeToggle<CR>
+" Opens latex tree with Vim Outliner
+map <C-n> :Voom latex<CR>:vertical resize 50<CR>
 " Syntax/Semantics checking
 map <C-l> :LanguageToolCheck<CR>
-" Opens latex tree with Vim Outliner
-map <C-a> :Voom latex<CR>:vertical resize 30<CR>
 
 " C++ formatting requires apt install astyle
 " autocmd BufEnter *.cpp 		map <C-f> :%!ls astyle --style=java --indent=force-tab -O -o -xe -xC200<CR>
