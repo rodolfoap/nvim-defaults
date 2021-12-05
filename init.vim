@@ -244,3 +244,4 @@ endif
 
 autocmd BufRead,BufNewFile *.rl set filetype=lex
 autocmd BufRead,BufNewFile .x   set filetype=sh
+autocmd BufRead,BufNewFile .k   set filetype=sh
