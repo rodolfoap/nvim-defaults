@@ -241,3 +241,5 @@ let g:gutentags_cache_dir='/home/rodolfoap/.ctags/'
 if has("autocmd")
 	au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif
+
+autocmd BufRead,BufNewFile *.rl set filetype=lex
