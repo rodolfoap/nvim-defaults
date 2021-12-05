@@ -243,3 +243,4 @@ if has("autocmd")
 endif
 
 autocmd BufRead,BufNewFile *.rl set filetype=lex
+autocmd BufRead,BufNewFile .x   set filetype=sh
