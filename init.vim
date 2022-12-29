@@ -242,6 +242,7 @@ if has("autocmd")
 	au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 endif
 
-autocmd BufRead,BufNewFile *.rl set filetype=lex
+autocmd BufRead,BufNewFile *.rl set filetype=go
+autocmd BufRead,BufNewFile *.y  set filetype=go
 autocmd BufRead,BufNewFile .x   set filetype=sh
 autocmd BufRead,BufNewFile .k   set filetype=sh

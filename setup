@@ -1,0 +1,22 @@
+#!/bin/bash
+cd ~
+set -x
+
+# Pip packages are already added in the installer
+# sudo python3 -m pip install yapf pynvim neovim
+
+# Optionally, python2 can be installed, although not recommended
+# ./install.pip2
+
+# Setup environment
+rm -rf .vim .Xresources .style.yapf .config/nvim/bundle
+mkdir -p .ctags .local/share/nvim/shada/
+touch .local/share/nvim/shada/
+ln -s .config/nvim .vim
+ln -s .config/nvim/_Xresources .Xresources
+ln -s .config/nvim/_style.yapf .style.yapf
+
+# Setting up Vundle and plugins
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.config/nvim/bundle/Vundle.vim
+vim -s .config/nvim/vim.1
+vim -s .config/nvim/vim.2
