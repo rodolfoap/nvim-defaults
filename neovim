@@ -8,3 +8,5 @@ apt -y install ./nvim-linux64.deb
 [ -f /usr/local/bin/vim ] || ln -s /bin/nvim /usr/local/bin/vi
 [ -f /usr/local/bin/vim ] || ln -s /bin/nvim /usr/local/bin/vim
 rm -f ./nvim-linux64.deb
+
+nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'

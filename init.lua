@@ -1,6 +1,15 @@
 -- " REMEMBER running :checkhealth to check plugins status
 -- " Great guide: https://jdhao.github.io/2018/12/24/centos_nvim_install_use_guide_en/
--- 
+
+vim.opt.number = false
+
+-- To install packer: nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
+require('r.packer')
+
+--require('r.autocmd')
+--require('r.plugins')
+--require('r.keybinds')
+
 -- set nocompatible
 -- 
 -- " Vundle ----------------------------------------------[START]
@@ -246,10 +255,3 @@
 -- autocmd BufRead,BufNewFile *.y  set filetype=go
 -- autocmd BufRead,BufNewFile .x   set filetype=sh
 -- autocmd BufRead,BufNewFile .k   set filetype=sh
-vim.opt.number = true
-
--- Vanilla Config
-require('r.settings')
-require('r.autocmd')
-require('r.plugins')
-require('r.keybinds')
