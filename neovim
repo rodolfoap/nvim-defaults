@@ -1,0 +1,10 @@
+#!/bin/bash
+
+apt -y remove neovim neovim-runtime
+cd /tmp
+wget https://github.com/neovim/neovim/releases/download/stable/nvim-linux64.deb
+apt -y install ./nvim-linux64.deb
+
+[ -f /usr/local/bin/vim ] || ln -s /usr/bin/nvim /usr/local/bin/vi
+[ -f /usr/local/bin/vim ] || ln -s /usr/bin/nvim /usr/local/bin/vim
+rm -f ./nvim-linux64.deb
