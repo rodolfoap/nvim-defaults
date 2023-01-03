@@ -11,6 +11,8 @@ apt -y install ./nvim-linux64.deb
 # Links
 DEST=/usr/bin/nvim
 DEST=/bin/nvim
+
+rm -f /usr/local/bin/{vi,vim}
 [ -f /usr/local/bin/vim ] || ln -s ${DEST} /usr/local/bin/vi
 [ -f /usr/local/bin/vim ] || ln -s ${DEST} /usr/local/bin/vim
 
