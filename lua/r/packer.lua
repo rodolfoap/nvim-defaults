@@ -1,3 +1,5 @@
+-- Packer is automatically installed.
+
 local ensure_packer = function()
   local fn = vim.fn
   local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
@@ -8,18 +10,17 @@ local ensure_packer = function()
   end
   return false
 end
-
 local packer_bootstrap = ensure_packer()
 
 return require('packer').startup(function(use)
-  use 'wbthomason/packer.nvim'
-  -- My plugins here
-  -- use 'foo1/bar1.nvim'
-  -- use 'foo2/bar2.nvim'
+	use 'wbthomason/packer.nvim'
 
-  -- Automatically set up your configuration after cloning packer.nvim
-  -- Put this at the end after all plugins
-  if packer_bootstrap then
-    require('packer').sync()
-  end
+	-- Plugins go here
+
+	-- use 'shaunsingh/moonlight.nvim'
+
+	-- Automatically set up your configuration after cloning packer.nvim: put this at the end after all plugins
+	if packer_bootstrap then
+		require('packer').sync()
+	end
 end)

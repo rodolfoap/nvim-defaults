@@ -3,6 +3,7 @@
 
 -- To install packer: nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
 require('r.packer')
+-- require('moonlight').set()
 
 --require('r.autocmd')
 --require('r.plugins')
