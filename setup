@@ -18,5 +18,7 @@ ln -s .config/nvim/_style.yapf .style.yapf
 
 # Setting up Vundle and plugins
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.config/nvim/bundle/Vundle.vim
-vim -s .config/nvim/vim.1
-vim -s .config/nvim/vim.2
+cp -v .config/nvim/init.vim.bare .config/nvim/init.vim
+vim --headless -s .config/nvim/vim.setup
+vim --headless -s .config/nvim/vim.setup.post
+cp -v .config/nvim/init.vim.full .config/nvim/init.vim

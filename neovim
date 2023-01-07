@@ -1,0 +1,20 @@
+#!/bin/bash
+
+# Remove apt install
+apt -y remove neovim neovim-runtime vim-common vim-tiny
+
+# Download and install stable
+cd /tmp
+wget https://github.com/neovim/neovim/releases/download/stable/nvim-linux64.deb
+apt -y install ./nvim-linux64.deb
+
+# Links
+DEST=/usr/bin/nvim
+DEST=/bin/nvim
+
+rm -f /usr/local/bin/{vi,vim}
+[ -f /usr/local/bin/vim ] || ln -s ${DEST} /usr/local/bin/vi
+[ -f /usr/local/bin/vim ] || ln -s ${DEST} /usr/local/bin/vim
+
+# Cleanup
+rm -f ./nvim-linux64.deb
