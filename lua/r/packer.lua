@@ -1,5 +1,4 @@
 -- Packer is automatically installed.
-
 local ensure_packer = function()
 	local fn = vim.fn
 	local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
@@ -11,28 +10,20 @@ local ensure_packer = function()
 	return false
 end
 local packer_bootstrap = ensure_packer()
-
 return require('packer').startup(function(use)
 	-- Plugins go here -----------------------------------------------------------------------------------------------------
 	use 'wbthomason/packer.nvim' -- Packer itself must be here -------------------------------------------------------------
 --	use 'shaunsingh/moonlight.nvim' -- Nice themes
-	use 'rhysd/vim-grammarous' -- LanguageTool grammar check
+	use 'rodolfoap/vim-grammarous' -- LanguageTool grammar check, just use :GrammarousCheck
 
 	-- Completion + LSP ----------------------------------------------------------------------------------------------------
-	--use 'neovim/nvim-lspconfig' -- https://github.com/neovim/nvim-lspconfig
-	--use 'kabouzeid/nvim-lspinstall' -- LSP Installer https://github.com/williamboman/nvim-lsp-installer, depends on previous one
-	use 'glepnir/lspsaga.nvim' -- https://github.com/glepnir/lspsaga.nvim (seems like an alternative to neovim LSP)
-	use {
-		"williamboman/mason.nvim", -- lsp-install/lsp-installer replacement: https://github.com/williamboman/mason.nvim
-		"williamboman/mason-lspconfig.nvim",
-		"neovim/nvim-lspconfig",
-	}
+	use {"williamboman/mason.nvim", "williamboman/mason-lspconfig.nvim", "neovim/nvim-lspconfig",}
 	use {"hrsh7th/nvim-cmp",
 		requires = {
 			"hrsh7th/cmp-buffer", "hrsh7th/cmp-nvim-lsp",
 			'quangnguyen30192/cmp-nvim-ultisnips', 'hrsh7th/cmp-nvim-lua',
 			'octaltree/cmp-look', 'hrsh7th/cmp-path', 'hrsh7th/cmp-calc',
-			'f3fora/cmp-spell', 'hrsh7th/cmp-emoji'
+			'f3fora/cmp-spell', 'hrsh7th/cmp-emoji',
 		}
 	}
 	use {
@@ -41,6 +32,7 @@ return require('packer').startup(function(use)
 		requires = 'hrsh7th/nvim-cmp'
 	}
 
+	-- Completion + LSP ----------------------------------------------------------------------------------------------------
 	-- Automatically set up your configuration after cloning packer.nvim: put this at the end after all plugins ------------
 	if packer_bootstrap then
 		require('packer').sync()

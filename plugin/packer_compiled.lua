@@ -124,11 +124,6 @@ _G.packer_plugins = {
     path = "/home/rap/.local/share/nvim/site/pack/packer/start/cmp-tabnine",
     url = "https://github.com/tzachar/cmp-tabnine"
   },
-  ["lspsaga.nvim"] = {
-    loaded = true,
-    path = "/home/rap/.local/share/nvim/site/pack/packer/start/lspsaga.nvim",
-    url = "https://github.com/glepnir/lspsaga.nvim"
-  },
   ["mason-lspconfig.nvim"] = {
     loaded = true,
     path = "/home/rap/.local/share/nvim/site/pack/packer/start/mason-lspconfig.nvim",
@@ -157,7 +152,7 @@ _G.packer_plugins = {
   ["vim-grammarous"] = {
     loaded = true,
     path = "/home/rap/.local/share/nvim/site/pack/packer/start/vim-grammarous",
-    url = "https://github.com/rhysd/vim-grammarous"
+    url = "https://github.com/rodolfoap/vim-grammarous"
   }
 }
 

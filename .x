@@ -17,7 +17,7 @@ case "$1" in
 e)	vi -p ./lua/r/packer.lua ./lua/r/plugins.lua ./lua/r/settings.lua NOTES.md init.lua
 	;;
 i)	# Reinstall from scratch
-	sudo rm -rf /home/rap/.local/share/nvim ./plugin/ /home/rap/.cache/nvim/
+	sudo rm -rf /home/rap/.local/share/nvim /home/rap/.cache/nvim/ ./plugin/
 	packerinstall;
 	packerupdate;
 	;;

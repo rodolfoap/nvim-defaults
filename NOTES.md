@@ -1,3 +1,5 @@
+This does plugin can use job feature on Vim 8.0.27 (or later) or Neovim. It enables asynchronous command execution so you don't need to be blocked until the check has been done on Vim8+ or Neovim.
+
 
   -- common
   use 'rhysd/vim-grammarous' -- LanguageTool grammar check
