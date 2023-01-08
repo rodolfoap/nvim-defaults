@@ -3,6 +3,25 @@
 
 -- To install packer: nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
 require('r.packer')
+require("mason").setup()
+require("mason-lspconfig").setup{
+	ensure_installed = {"bashls", "sumneko_lua", "gopls", "clangd"},
+	automatic_installation = true,
+}
+require("mason-lspconfig").setup_handlers {
+        -- The first entry (without a key) will be the default handler
+        -- and will be called for each installed server that doesn't have
+        -- a dedicated handler.
+        function (server_name) -- default handler (optional)
+            require("lspconfig")[server_name].setup {}
+        end,
+        -- Next, you can provide a dedicated handler for specific servers.
+        -- For example, a handler override for the rust_analyzer:
+        ["rust_analyzer"] = function ()
+            require("rust-tools").setup {}
+        end
+    }
+
 -- require('moonlight').set()
 
 --require('r.autocmd')
@@ -272,3 +291,7 @@ vim.opt.guicursor = 'a:hor20-blinkwait0-blinkoff10-blinkon10'
 -- autocmd BufRead,BufNewFile *.y  set filetype=go
 -- autocmd BufRead,BufNewFile .x   set filetype=sh
 -- autocmd BufRead,BufNewFile .k   set filetype=sh
+--
+--
+--
+
