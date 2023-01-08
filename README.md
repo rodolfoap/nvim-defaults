@@ -22,3 +22,9 @@
 ### Plug-ins
 
 * When adding a new plugin, check the `.gitmodules` file, in order to include it as a submodule.
+
+### VSCode-like
+
+* See https://github.com/josethz00/neovim-like-vscode
+* Requires last nodejs, install from https://github.com/nodesource/distributions/blob/master/README.md#debinstall
+* DO NOT install npm, it's pure garbage!

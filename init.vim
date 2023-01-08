@@ -13,236 +13,268 @@ set rtp+=~/.config/nvim/bundle/Vundle.vim
 " Plugin Manager =======================================[START]
 call vundle#begin()
 
-" The very plugin manager
-Plugin 'VundleVim/Vundle.vim'
-
-" Left-column tree, activate with [CTRL-N]
+Plugin 'dense-analysis/ale'
+Plugin 'mattn/emmet-vim'
+Plugin 'neoclide/coc.nvim', {'branch': 'release'}
 Plugin 'scrooloose/nerdtree'
-
-" Grammar check, activate with [CTRL-L]
-Plugin 'vim-scripts/LanguageTool'
-
-" Code formatting, apparently not used.
-" Plugin 'sbdchd/neoformat'
-
-" Autocomplete, nothing to do, enabled at startup
-Plugin 'shougo/deoplete.nvim'
-
-" Deoplete for Python
-Plugin 'zchee/deoplete-jedi'
-
-" Deoplete for C++
-"lugin 'zchee/deoplete-clang'
-Plugin 'sbdchd/neoformat'
-
-" Deoplete for C++ from database, requires running rtags (rdm)
-Plugin 'rzaluska/deoplete-rtags'
-
-" Nerdtree-like tree for latex tags, activate with [CTRL-T]
-Plugin 'vim-voom/voom'
-
-" Ctags generation, automatically loaded and executed at startup
-"Plugin 'ludovicchabant/vim-gutentags'
-
-" GNUPG files edition
-Plugin 'jamessan/vim-gnupg'
-
-" Autocomplete for spellcheck
-Plugin 'deathlyfrantic/deoplete-spell'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
+"Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plugin 'ryanoasis/vim-devicons'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'ctrlpvim/ctrlp.vim' " fuzzy find files
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'sheerun/vim-polyglot'
+Plugin 'morhetz/gruvbox'
+Plugin 'rafi/awesome-vim-colorschemes'  
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'Yggdroot/indentLine' 
+Plugin 'HerringtonDarkholme/yats.vim' " TS Syntax
+Plugin 'tomasiser/vim-code-dark'
 
 call vundle#end()
 " Plugin Manager ========================================[END]
 
-filetype plugin indent on
-" Deoplete avoid opening additional window
-set completeopt-=preview
-" Vundle ------------------------------------------------[END]
+inoremap jk <ESC>
+nmap <C-n> :NERDTreeToggle<CR>
+vmap ++ <plug>NERDCommenterToggle
+nmap ++ <plug>NERDCommenterToggle
 
-" allow backspacing over everything in insert mode
-set bs=2
+set mouse=a
+set number
+set hidden
+set cursorline
+set expandtab
+set autoindent
+set smartindent
+set shiftwidth=4
+set tabstop=4
+set encoding=utf8
+set history=5000
+set clipboard=unnamedplus
 
-"show a status line even when only one window is shown.
-set ls=2
+	" open NERDTree automatically
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * NERDTree
 
-" read/write a .viminfo file, don't store more
-" than 50 lines of registers
-set viminfo='20,\"50
+let g:NERDTreeGitStatusWithFlags = 1
+"let g:WebDevIconsUnicodeDecorateFolderNodes = 1
+"let g:NERDTreeGitStatusNodeColorization = 1
+"let g:NERDTreeColorMapCustom = {
+    "\ "Staged"    : "#0ee375",  
+    "\ "Modified"  : "#d9bf91",  
+    "\ "Renamed"   : "#51C9FC",  
+    "\ "Untracked" : "#FCE77C",  
+    "\ "Unmerged"  : "#FC51E6",  
+    "\ "Dirty"     : "#FFBD61",  
+    "\ "Clean"     : "#87939A",   
+    "\ "Ignored"   : "#808080"   
+    "\ }                         
 
-" keep 1000 lines of command line history
-set history=100
 
-" show the cursor position all the time
-set ruler
+let g:NERDTreeIgnore = ['^node_modules$']
 
-" syntax highlighting
-syntax on
+" vim-prettier
+"let g:prettier#quickfix_enabled = 0
+"let g:prettier#quickfix_auto_focus = 0
+" prettier command for coc
+command! -nargs=0 Prettier :CocCommand prettier.formatFile
+" run prettier on save
+"let g:prettier#autoformat = 0
+"autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
 
-" highlight searches
-set hlsearch
 
-" no beep
-set visualbell
+" ctrlp
+let g:ctrlp_user_command = ['.git/', 'git --git-dir=%s/.git ls-files -oc --exclude-standard']
 
-" numbering
-set nonumber
+" j/k will move virtual lines (lines that wrap)
+noremap <silent> <expr> j (v:count == 0 ? 'gj' : 'j')
+noremap <silent> <expr> k (v:count == 0 ? 'gk' : 'k')
+nnoremap <C-s> :w<CR>
+nnoremap <C-Q> :wq<CR>
 
-" move between splits
-"noremap <C-h> <C-w>h
-"noremap <C-j> <C-w>j
-"noremap <C-k> <C-w>k
-"noremap <C-l> <C-w>l
+" shift+arrow selection
+nmap <S-Up> v<Up>
+nmap <S-Down> v<Down>
+nmap <S-Left> v<Left>
+nmap <S-Right> v<Right>
+vmap <S-Up> <Up>
+vmap <S-Down> <Down>
+vmap <S-Left> <Left>
+vmap <S-Right> <Right>
+imap <S-Up> <Esc>v<Up>
+imap <S-Down> <Esc>v<Down>
+imap <S-Left> <Esc>v<Left>
+imap <S-Right> <Esc>v<Right>
 
-" -- sudo save
-cmap w!! w !sudo tee >/dev/null %
+vmap <C-c> y<Esc>i
+vmap <C-x> d<Esc>i
+map <C-v> pi
+imap <C-v> <Esc>pi
 
-" Tabulation management
-set noexpandtab
-set noautoindent
-set nosmartindent
-set nocindent
-set copyindent
-set preserveindent
-set softtabstop=0
-set shiftwidth=8
-set tabstop=8
+set cindent
+colorscheme codedark
 
-" Spellchecking
-if has("spell") " if vim support spell checking
-    " Download dictionaries automatically
-    if !filewritable($HOME."/.vim/spell")
-        call mkdir($HOME."/.vim/spell","p")
-    endif
-    set spellsuggest=10 " z= will show suggestions (10 at most)
-    " spell checking for text, HTML, LaTeX, markdown and literate Haskell
-    autocmd BufEnter *.txt,*.tex,*.html,*.md,*.ymd,*.lhs setlocal spell
-    autocmd BufEnter *.txt,*.tex,*.html,*.md,*.ymd,*.lhs setlocal spelllang=fr,en
-    " better error highlighting with solarized
-    highlight clear SpellBad
-    highlight SpellBad term=standout ctermfg=2 term=underline cterm=underline
-    highlight clear SpellCap
-    highlight SpellCap term=underline cterm=underline
-    highlight clear SpellRare
-    highlight SpellRare term=underline cterm=underline
-    highlight clear SpellLocal
-    highlight SpellLocal term=underline cterm=underline
-endif
-
-" ========
-" Personal
-" ========
-" nmap - normal mode (ESC) maps
-" cmap - command-line (:) mode maps
-" imap - insert mode (i) maps
-" xmap - visual (v) mode maps
-" vmap - visual (v) and select mode (UNKNOWN) maps
-" smap - select mode (UNKNOWN) maps
-" omap - operator pending mode maps: dw='delete word', after pressing d, vim enters in op-pending-mode
-"  map - normal, visual and op-pending-mode map
-
-" Easier anti-quote
-imap éé `
-
-" Use CTRL-N to open the NerdTree
-map <C-a> :NERDTreeToggle<CR>
-" Opens latex tree with Vim Outliner
-map <C-n> :Voom latex<CR>:vertical resize 50<CR>
-" Syntax/Semantics checking
-map <C-l> :LanguageToolCheck<CR>
-
-" C++ formatting requires apt install astyle
-" autocmd BufEnter *.cpp 		map <C-f> :%!ls astyle --style=java --indent=force-tab -O -o -xe -xC200<CR>
-autocmd BufEnter *.cpp 		map <C-f> :%!/home/rodolfoap/bin/rlang-format<CR>
-autocmd BufEnter *.py		map <C-f> :%!yapf<CR>
-
-" CONTROL-t: Selects all visual block, tex-izes it (requires ~/bin/texize);
-" V selects all visual block, !command<CR> runs an external command
-nmap <C-t> V!texize<CR>
-" Or, if the text is already selected, and the user is already in visual mode:
-vmap <C-t> !texize<CR>
-
-" CONTROL-t: Selects all visual block, translates it (requires google trans);
-" V selects all visual block, !command<CR> runs an external command
-" vmap <C-l> !vim.translate.fr2en<CR>
-nmap <C-l> V!vim.translate.en2fr<CR>
-
-" CONTROL-f: Folds block to 100 chars
-" Visual mode fold to 100 with ^f (requires /usr/bin/fold)
-vmap <C-f> !fold -s -w 100<CR>
-
-" Wise vertical motion in insert mode
-imap <silent> <Down> <C-o>gj
-imap <silent> <Up> <C-o>gk
-
-" Wise vertical motion in visual mode
-xmap <silent> <Down> gj
-xmap <silent> <Up> gk
-
-" Deoplete works only with tabs
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-
- map	<F7>  gT<C-w>W
-imap	<F7>  <Esc>gT<C-w>W
- map	<F8>  gt<C-w><C-w>
-imap	<F8>  <Esc>gt<C-w><C-w>
- map 	<F9>  :x<CR>
-imap 	<F9>  <Esc>:x<CR>
- map	<F10> :xa<CR>
-imap	<F10> <Esc>:xa<CR>
- map	<F5>  :wa!<CR>
-imap	<F5>  <Esc>:wa!<CR>
-
-" To jump to the tag of the word under cursor, we use CTRL-J
-" This will also work: <C-R><C-W> puts the word under the cursor to the
-" command line:
-"map	<C-J> <Esc>:tag <C-R><C-W><CR><CR>
- map	<C-J> <Esc>:tag <C-R>=expand('<cword>')<CR><CR>
-imap	<C-J> <Esc>:tag <C-R>=expand('<cword>')<CR><CR>
-" In addition, notice that C-M maps to CTRL-ENTER
-
-" https://coderwall.com/p/if9mda/automatically-set-paste-mode-in-vim-when-pasting-in-insert-mode
-let &t_SI .= "\<Esc>[?2004h"
-let &t_EI .= "\<Esc>[?2004l"
-inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
-function! XTermPasteBegin()
-  set pastetoggle=<Esc>[201~
-  set paste
-  return ""
+" sync open file with NERDTree
+" " Check if NERDTree is open or active
+function! IsNERDTreeOpen()        
+  return exists("t:NERDTreeBufName") && (bufwinnr(t:NERDTreeBufName) != -1)
 endfunction
 
-set foldlevel=20
-set whichwrap+=<,>,[,]
-set wrap lbr
+" Call NERDTreeFind iff NERDTree is active, current window contains a modifiable
+" file, and we're not in vimdiff
+function! SyncTree()
+  if &modifiable && IsNERDTreeOpen() && strlen(expand('%')) > 0 && !&diff
+    NERDTreeFind
+    wincmd p
+  endif
+endfunction
 
-" Try the following if your GUI uses a dark background.
-:highlight ExtraWhitespace ctermbg=darkred guibg=darkred
-:match ExtraWhitespace /\s\+$/
+" Highlight currently open buffer in NERDTree
+autocmd BufEnter * call SyncTree()
 
-let g:languagetool_jar='/opt/languagetool/languagetool-commandline.jar'
-let g:languagetool_lang='en'
+" coc config
+let g:coc_global_extensions = [
+  \ 'coc-snippets',
+  \ 'coc-pairs',
+  \ 'coc-tsserver',
+  \ 'coc-eslint', 
+  \ 'coc-prettier', 
+  \ 'coc-json', 
+  \ 'coc-python',
+  \ ]
+" from readme
+" if hidden is not set, TextEdit might fail.
+set hidden " Some servers have issues with backup files, see #649 set nobackup set nowritebackup " Better display for messages set cmdheight=2 " You will have bad experience for diagnostic messages when it's default 4000.
+set updatetime=300
 
-"" Deoplete https://github.com/Shougo/deoplete.nvim
-let g:deoplete#enable_at_startup = 1
+" don't give |ins-completion-menu| messages.
+set shortmess+=c
 
-" Disable VISUAL mode when using mouse
-set mouse=
+" always show signcolumns
+set signcolumn=yes
 
-" Cursor (:help guicursor)
-set guicursor=a:hor20-blinkwait0-blinkoff10-blinkon10
+" Use tab for trigger completion with characters ahead and navigate.
+" Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
-" Disable Python formatting style, see expandtab in /usr/share/nvim/runtime/ftplugin/python.vim and https://github.com/vim/vim/issues/989
-let g:python_recommended_style = 0
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
 
-let g:gutentags_ctags_tagfile='ctags'
-let g:gutentags_cache_dir='/home/rodolfoap/.ctags/'
+" Use <c-space> to trigger completion.
+inoremap <silent><expr> <c-space> coc#refresh()
 
-" Uncomment the following to have Vim jump to the last position when
-" reopening a file
-if has("autocmd")
-	au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
-endif
+" Use <cr> to confirm completion, `<C-g>u` means break undo chain at current position.
+" Coc only does snippet and additional edit on confirm.
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+" Or use `complete_info` if your vim support it, like:
+" inoremap <expr> <cr> complete_nfo()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
 
-autocmd BufRead,BufNewFile *.rl set filetype=go
-autocmd BufRead,BufNewFile *.y  set filetype=go
-autocmd BufRead,BufNewFile .x   set filetype=sh
-autocmd BufRead,BufNewFile .k   set filetype=sh
+" Use `[g` and `]g` to navigate diagnostics
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
+
+" Remap keys for gotos
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gr <Plug>(coc-references)
+
+" Use K to show documentation in preview window
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
+
+" Highlight symbol under cursor on CursorHold
+autocmd CursorHold * silent call CocActionAsync('highlight')
+
+" Remap for rename current word
+nmap <F2> <Plug>(coc-rename)
+
+" Remap for format selected region
+xmap <leader>f  <Plug>(coc-format-selected)
+nmap <leader>f  <Plug>(coc-format-selected)
+
+augroup mygroup
+  autocmd!
+  " Setup formatexpr specified filetype(s).
+  autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
+" Update signature help on jump placeholder
+  autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
+augroup end
+
+" Remap for do codeAction of selected region, ex: `<leader>aap` for current paragraph
+xmap <leader>a  <Plug>(coc-codeaction-selected)
+nmap <leader>a  <Plug>(coc-codeaction-selected)
+
+" Remap for do codeAction of current line
+nmap <leader>ac  <Plug>(coc-codeaction)
+" Fix autofix problem of current line
+nmap <leader>qf  <Plug>(coc-fix-current)
+
+" Create mappings for function text object, requires document symbols feature of languageserver.
+xmap if <Plug>(coc-funcobj-i)
+xmap af <Plug>(coc-funcobj-a)
+omap if <Plug>(coc-funcobj-i)
+omap af <Plug>(coc-funcobj-a)
+
+" Use <C-d> for select selections ranges, needs server support, like: coc-tsserver, coc-python
+nmap <silent> <C-d> <Plug>(coc-range-select)
+xmap <silent> <C-d> <Plug>(coc-range-select)
+
+" Use `:Format` to format current buffer
+command! -nargs=0 Format :call CocAction('format')
+
+" Use `:Fold` to fold current buffer
+command! -nargs=? Fold :call     CocAction('fold', <f-args>)
+
+" use `:OR` for organize import of current buffer
+command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
+
+" Add status line support, for integration with other plugin, checkout `:h coc-status`
+set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
+
+" Using CocList
+" Show all diagnostics
+nnoremap <silent> <space>a  :<C-u>CocList diagnostics<cr>
+" Manage extensions
+nnoremap <silent> <space>e  :<C-u>CocList extensions<cr>
+" Show commands
+nnoremap <silent> <space>c  :<C-u>CocList commands<cr>
+" Find symbol of current document
+nnoremap <silent> <space>o  :<C-u>CocList outline<cr>
+" Search workspace symbols
+nnoremap <silent> <space>s  :<C-u>CocList -I symbols<cr>
+" Do default action for next item.
+nnoremap <silent> <space>j  :<C-u>CocNext<CR>
+" Do default action for previous item.
+nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
+" Resume latest coc list
+nnoremap <silent> <space>p  :<C-u>CocListResume<CR>i
+
+set laststatus=2
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
+let g:airline_statusline_ontop=0
+let g:airline_theme='base16_twilight'
+
+let g:airline#extensions#tabline#formatter = 'default'
+" navegação entre os buffers
+nnoremap <M-Right> :bn<cr>
+nnoremap <M-Left> :bp<cr>
+nnoremap <c-x> :bp \|bd #<cr>
+
+let g:ale_completion_enabled = 0
+let g:ale_linters = {'python': ['flake8', 'pylint'], 'javascript': ['eslint']}

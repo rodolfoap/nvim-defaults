@@ -19,6 +19,8 @@ ln -s .config/nvim/_style.yapf .style.yapf
 # Setting up Vundle and plugins
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.config/nvim/bundle/Vundle.vim
 cp -v .config/nvim/init.vim.bare .config/nvim/init.vim
-vim --headless -s .config/nvim/vim.setup
+vim -s .config/nvim/vim.setup
 vim --headless -s .config/nvim/vim.setup.post
 cp -v .config/nvim/init.vim.full .config/nvim/init.vim
+docker run -ti --rm -v ~/.config/nvim/bundle/coc.nvim/:/app --workdir /app node yarn install
+/usr/bin/sudo /bin/chown -R $(/usr/bin/id -un): ~/.config/nvim

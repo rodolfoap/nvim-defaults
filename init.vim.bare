@@ -13,42 +13,28 @@ set rtp+=~/.config/nvim/bundle/Vundle.vim
 " Plugin Manager =======================================[START]
 call vundle#begin()
 
-" The very plugin manager
-Plugin 'VundleVim/Vundle.vim'
-
-" Left-column tree, activate with [CTRL-N]
+Plugin 'dense-analysis/ale'
+Plugin 'mattn/emmet-vim'
+Plugin 'neoclide/coc.nvim', {'branch': 'release'}
 Plugin 'scrooloose/nerdtree'
-
-" Grammar check, activate with [CTRL-L]
-Plugin 'vim-scripts/LanguageTool'
-
-" Code formatting, apparently not used.
-" Plugin 'sbdchd/neoformat'
-
-" Autocomplete, nothing to do, enabled at startup
-Plugin 'shougo/deoplete.nvim'
-
-" Deoplete for Python
-Plugin 'zchee/deoplete-jedi'
-
-" Deoplete for C++
-"lugin 'zchee/deoplete-clang'
-Plugin 'sbdchd/neoformat'
-
-" Deoplete for C++ from database, requires running rtags (rdm)
-Plugin 'rzaluska/deoplete-rtags'
-
-" Nerdtree-like tree for latex tags, activate with [CTRL-T]
-Plugin 'vim-voom/voom'
-
-" Ctags generation, automatically loaded and executed at startup
-"Plugin 'ludovicchabant/vim-gutentags'
-
-" GNUPG files edition
-Plugin 'jamessan/vim-gnupg'
-
-" Autocomplete for spellcheck
-Plugin 'deathlyfrantic/deoplete-spell'
+"Plug 'tsony-tsonev/nerdtree-git-plugin'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plugin 'ryanoasis/vim-devicons'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'ctrlpvim/ctrlp.vim' " fuzzy find files
+Plugin 'scrooloose/nerdcommenter'
+"Plug 'prettier/vim-prettier', { 'do': 'yarn install' }"
+Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'sheerun/vim-polyglot'
+Plugin 'morhetz/gruvbox'
+Plugin 'rafi/awesome-vim-colorschemes'  
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'Yggdroot/indentLine' 
+Plugin 'HerringtonDarkholme/yats.vim' " TS Syntax
+Plugin 'tomasiser/vim-code-dark'
 
 call vundle#end()
 " Plugin Manager ========================================[END]
+
