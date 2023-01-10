@@ -13,10 +13,10 @@ local packer_bootstrap = ensure_packer()
 return require('packer').startup(function(use)
 	-- Plugins go here -----------------------------------------------------------------------------------------------------
 	use 'wbthomason/packer.nvim' -- Packer itself must be here -------------------------------------------------------------
-	-- use 'rodolfoap/vim-grammarous' -- LanguageTool grammar check, just use :GrammarousCheck
-	
-
-
+	use 'rodolfoap/vim-grammarous' -- LanguageTool grammar check, just use :GrammarousCheck
+	use { 'nvim-telescope/telescope.nvim', tag = '0.1.0',
+		requires = { {'nvim-lua/plenary.nvim'} } 
+	}
 	
 
 	-- Automatically set up your configuration after cloning packer.nvim: put this at the end after all plugins ------------

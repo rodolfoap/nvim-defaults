@@ -1,13 +1,11 @@
-packersync(){
+packersync(){	PLUGDIR=~/.local/share/nvim/site/pack/packer/start/
 for a in $@; do 
 		echo '==================================================================================';
+		echo BEFORE: "$(find ${PLUGDIR}|sed 's/^/\t/')"
 	echo	nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync' -u $a
 		nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync' -u $a
-		echo;
-		echo 'Plugins in ~/.local/share/nvim/site/pack/packer/start/ ==========================='
-		ls -l ~/.local/share/nvim/site/pack/packer/start/
+		echo AFTER: "$(find ${PLUGDIR}|sed 's/^/\t/')"
 		echo '==================================================================================';
-		echo;
 done
 }
 packerinstall(){ packersync init0.lua init0.lua init1.lua;
@@ -18,7 +16,7 @@ e)	vi -p ./lua/r/packer.lua ./lua/r/plugins.lua ./lua/r/settings.lua NOTES.md in
 	;;
 i)	# Reinstall from scratch
 	sudo rm -rf /home/rap/.local/share/nvim /home/rap/.local/state/nvim/ /home/rap/.cache/nvim/ ./plugin/
-	packerinstall;
+	# packerinstall;
 	packerupdate;
 	;;
 "")	packerupdate;
