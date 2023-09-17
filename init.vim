@@ -23,7 +23,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'vim-scripts/LanguageTool'
 
 " Code formatting, apparently not used.
-" Plugin 'sbdchd/neoformat'
+" DISABLED: Plugin 'sbdchd/neoformat'
 
 " Autocomplete, nothing to do, enabled at startup
 Plugin 'shougo/deoplete.nvim'
@@ -42,7 +42,7 @@ Plugin 'rzaluska/deoplete-rtags'
 Plugin 'vim-voom/voom'
 
 " Ctags generation, automatically loaded and executed at startup
-"Plugin 'ludovicchabant/vim-gutentags'
+" DISABLED: Plugin 'ludovicchabant/vim-gutentags'
 
 " GNUPG files edition
 Plugin 'jamessan/vim-gnupg'
@@ -163,7 +163,7 @@ vmap <C-t> !texize<CR>
 " CONTROL-t: Selects all visual block, translates it (requires google trans);
 " V selects all visual block, !command<CR> runs an external command
 " vmap <C-l> !vim.translate.fr2en<CR>
-nmap <C-l> V!vim.translate.en2fr<CR>
+nmap <C-l> V!vim.translate.es2en<CR>
 
 " CONTROL-f: Folds block to 100 chars
 " Visual mode fold to 100 with ^f (requires /usr/bin/fold)
@@ -180,6 +180,21 @@ xmap <silent> <Up> gk
 " Deoplete works only with tabs
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
+" NEW: mapping visual-select/copy/paste like MSWord --- START
+
+" Selecting text with SHIFT+arrows
+" nnoremap <S-Right> v
+" nnoremap <S-Left> v
+" nnoremap <S-Up> v
+" nnoremap <S-Down> v
+
+" Copy/paste/cut with CTRL-C/V/X
+noremap <C-C> "+y
+noremap <C-V> "+p
+noremap <C-X> "+x
+
+" NEW: mapping visual-select/copy/paste like MSWord --- END
 
  map	<F7>  gT<C-w>W
 imap	<F7>  <Esc>gT<C-w>W
@@ -234,7 +249,7 @@ set guicursor=a:hor20-blinkwait0-blinkoff10-blinkon10
 let g:python_recommended_style = 0
 
 let g:gutentags_ctags_tagfile='ctags'
-let g:gutentags_cache_dir='/home/rodolfoap/.ctags/'
+let g:gutentags_cache_dir='/home/rap/.ctags/'
 
 " Uncomment the following to have Vim jump to the last position when
 " reopening a file
