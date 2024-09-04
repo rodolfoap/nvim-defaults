@@ -181,6 +181,8 @@ xmap <silent> <Up> gk
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
+map <C-c> <Nop>
+
 " NEW: mapping visual-select/copy/paste like MSWindows --- START
 
 " Selecting text with SHIFT+arrows
@@ -192,7 +194,7 @@ nnoremap <S-Up> v
 nnoremap <S-Down> v
 
 " Copy/paste/cut with CTRL-C/V/X
-noremap <C-C> "+y
+" noremap <C-C> "+y
 noremap <C-V> "+p
 noremap <C-X> "+x
 
